@@ -51,9 +51,7 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def create(self, validated_data):
-        user = validated_data.pop('user')
-        following = validated_data.pop('following')
-        if user == following:
+    def validate(self, attrs):
+        if self.context['request'].user == attrs['following']:
             raise serializers.ValidationError('подписка запрещена')
-        return Follow.objects.create(user=user, following=following)
+        return attrs
