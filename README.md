@@ -10,7 +10,7 @@ Blog_api
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git clone https://github.com/trub24/api_final_yatube.git
+https://github.com/trub24/Blog_api.git
 ```
 
 ```
